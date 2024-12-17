@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -8,23 +10,6 @@ public class Menu {
     public void app() {
         showForm();
         addPerson();
-    }
-
-    public void addPerson() {
-        Scanner myObj = new Scanner(System.in).useLocale(Locale.US);
-        ArrayList<Person> people = new ArrayList<Person>();
-
-        //        System.out.println(userName);
-        String name = myObj.nextLine();
-        int age = Integer.parseInt(myObj.nextLine());
-        String email = myObj.nextLine();
-        float height = Float.parseFloat(myObj.nextLine());
-
-
-        Person person1 = new Person(name, age, email, height);
-        people.add(person1);
-        System.out.println(person1);
-
     }
 
     public void showForm() {
@@ -40,4 +25,36 @@ public class Menu {
             e.printStackTrace();
         }
     }
+
+    public void addPerson() {
+        Scanner myObj = new Scanner(System.in).useLocale(Locale.US);
+        ArrayList<Person> people = new ArrayList<Person>();
+
+        //        System.out.println(userName);
+        String name = myObj.nextLine();
+        int age = Integer.parseInt(myObj.nextLine());
+        String email = myObj.nextLine();
+        float height = Float.parseFloat(myObj.nextLine());
+
+
+        Person personObj = new Person(name, age, email, height);
+        people.add(personObj);
+        createFile(personObj);
+
+    }
+
+    public void createFile(Person person) {
+        int index = 1;
+        try {
+            FileWriter myFile = new FileWriter("forms\\"+ index + "-" + person.getName().toUpperCase());
+            myFile.write(person.toString());
+            myFile.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        index++;
+    }
+
 }
