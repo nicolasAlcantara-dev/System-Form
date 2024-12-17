@@ -1,0 +1,16 @@
+###################################################
+#                MENU PRINCIPAL                  #
+#          Sistema de Cadastro e Formulário      #
+###################################################
+# 1 - Cadastrar o usuário                        #
+# 2 - Listar todos usuários cadastrados          #
+# 3 - Cadastrar nova pergunta no formulário      #
+# 4 - Deletar pergunta do formulário             #
+# 5 - Pesquisar usuário por:                     #
+#      - Nome                                    #
+#      - Idade                                   #
+#      - Email                                   #
+# 0 - Para encerrar o programa                   #
+###################################################
+# Escolha uma opção (0-5):
+###################################################
