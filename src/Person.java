@@ -1,10 +1,10 @@
-public class People {
+public class Person {
     private String name;
     private int age;
     private String email;
     private float height;
 
-    public People(String name, int age, String email, float height) {
+    public Person(String name, int age, String email, float height) {
         this.name = name;
         this.age = age;
         this.email = email;
