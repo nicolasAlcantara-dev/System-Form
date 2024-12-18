@@ -7,9 +7,40 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Menu {
+    int option = 0;
+    int index = 1;
     public void app() {
-        showForm();
-        addPerson();
+
+        do {
+            showMenu();
+
+            Scanner myOption = new Scanner((System.in));
+            option = myOption.nextInt();
+
+            switch (option) {
+                case 1:
+                    showForm();
+                    break;
+                case 2:
+                    listPeople();
+                    break;
+            }
+        }
+        while (option > 5 || option <= 0);
+    }
+
+    public void showMenu() {
+        try {
+            File form = new File("utils\\menu.txt");
+            Scanner myReader = new Scanner(form);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred:" + e);
+            e.printStackTrace();
+        }
     }
 
     public void showForm() {
@@ -24,6 +55,7 @@ public class Menu {
             System.out.println("An error occurred:" + e);
             e.printStackTrace();
         }
+        addPerson();
     }
 
     public void addPerson() {
@@ -40,11 +72,11 @@ public class Menu {
         Person personObj = new Person(name, age, email, height);
         people.add(personObj);
         createFile(personObj);
-
+        option = 0;
     }
 
     public void createFile(Person person) {
-        int index = 1;
+
         try {
             FileWriter myFile = new FileWriter("forms\\"+ index + "-" + person.getName().toUpperCase());
             myFile.write(person.toString());
@@ -55,6 +87,16 @@ public class Menu {
             e.printStackTrace();
         }
         index++;
+    }
+
+    public void listPeople() {
+        File folder = new File("forms/");
+
+        System.out.println("People found: ");
+        for (final File fileEntry : folder.listFiles()) {
+            System.out.println(fileEntry.getName());
+        }
+        option = 0;
     }
 
 }
