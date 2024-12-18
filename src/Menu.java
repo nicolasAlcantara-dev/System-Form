@@ -24,6 +24,9 @@ public class Menu {
                 case 2:
                     listPeople();
                     break;
+                case 6:
+                    System.exit(0);
+
             }
         }
         while (option > 5 || option <= 0);

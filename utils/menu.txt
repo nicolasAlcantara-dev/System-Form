@@ -10,7 +10,7 @@
        ➜ Nome                                   
        ➜ Idade                                  
        ➜ Email                                  
- [0] ➤ Encerrar o Programa                      
+ [6] ➤ Encerrar o Programa
 ==================================================
- ❯ Escolha uma opção (0-5):                    
+ ❯ Escolha uma opção (1-6):
 ==================================================
