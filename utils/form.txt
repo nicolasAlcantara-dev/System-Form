@@ -1,4 +1,11 @@
-1- Qual seu nome?
-2- Qual sua idade?
-3- Qual seu email?
-4- Qual sua altura?
+==================================================
+                 FORMULÁRIO                     
+        Por favor, responda às perguntas         
+==================================================
+ [1] ➤ Qual é o seu nome completo?              
+ [2] ➤ Qual é a sua idade? (Em anos)            
+ [3] ➤ Qual é o seu endereço de email válido?   
+ [4] ➤ Qual é a sua altura? (Em metros, ex: 1.75)
+==================================================
+ ❯ Digite sua resposta para cada pergunta:      
+==================================================

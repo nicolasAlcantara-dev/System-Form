@@ -29,11 +29,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "People{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-                ", height=" + height +
-                '}';
+        return "People{  " +
+                "name: " + name +
+                ", age: " + age +
+                ", email: " + email +
+                ", height: " + height +
+                " }";
     }
 }

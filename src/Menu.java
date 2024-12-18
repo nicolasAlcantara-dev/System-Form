@@ -21,7 +21,7 @@ public class Menu {
                 System.out.println(data);
             }
         } catch (FileNotFoundException e) {
-            System.out.println("An error ocurred:" + e);
+            System.out.println("An error occurred:" + e);
             e.printStackTrace();
         }
     }
