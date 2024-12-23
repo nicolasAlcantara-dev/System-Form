@@ -1,16 +1,16 @@
 ==================================================
-                 MENU PRINCIPAL                  
-        Sistema de Cadastro e Formulário        
+                 MAIN MENU
+        Registration and Form System
 ==================================================
- [1] ➤ Cadastrar Usuário                        
- [2] ➤ Listar Todos os Usuários Cadastrados     
- [3] ➤ Cadastrar Nova Pergunta no Formulário    
- [4] ➤ Deletar Pergunta do Formulário           
- [5] ➤ Pesquisar Usuário por:                   
-       ➜ Nome                                   
-       ➜ Idade                                  
+ [1] ➤ Register User
+ [2] ➤ List All Registered Users
+ [3] ➤ Add New Question to the Form
+ [4] ➤ Delete Question from the Form
+ [5] ➤ Search User by:
+       ➜ Name
+       ➜ Age
        ➜ Email                                  
- [6] ➤ Encerrar o Programa
+ [6] ➤ Exit Program
 ==================================================
- ❯ Escolha uma opção (1-6):
+ ❯ Choose an option (1-6):
 ==================================================

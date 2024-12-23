@@ -1,11 +1,8 @@
 ==================================================
-                 FORMULÁRIO                     
-        Por favor, responda às perguntas         
+                 FORMULARY
+        Please answer the questions
 ==================================================
- [1] ➤ Qual é o seu nome completo?              
- [2] ➤ Qual é a sua idade? (Em anos)            
- [3] ➤ Qual é o seu endereço de email válido?   
- [4] ➤ Qual é a sua altura? (Em metros, ex: 1.75)
-==================================================
- ❯ Digite sua resposta para cada pergunta:      
-==================================================
+[1] ➤ What is your full name?
+[2] ➤ How old are you? (In years)
+[3] ➤ What is your email address?
+[4] ➤ What is your height? (In centimeters, ex: 175)
