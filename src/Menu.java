@@ -3,7 +3,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -21,6 +23,7 @@ public class Menu {
             switch (option) {
                 case 1:
                     showForm();
+                    addPerson();
                     break;
                 case 2:
                     listPeople();
@@ -28,9 +31,9 @@ public class Menu {
                 case 3:
                     createQuestion();
                     break;
-//                case 4:
-//                    removeQuestion();
-//                    break;
+                case 4:
+                    removeQuestion();
+                    break;
 //                case 5:
 //                searchByUser();
 //                    break;
@@ -42,25 +45,41 @@ public class Menu {
         while (option > 5 || option <= 0);
     }
 
-    public void showMenu() {
-        Path fileMenu = Path.of("utils\\menu.txt");
+    public void removeQuestion() {
+        showForm();
+        Scanner myObj = new Scanner(System.in).useLocale(Locale.US);
+        System.out.print("Question for deletion: ");
+        int numberQ = myObj.nextInt();
+        while (numberQ <= 4) {
+            numberQ = myObj.nextInt();
+        }
         try {
-            String content = Files.readString(fileMenu);
+            ArrayList<String> content = (ArrayList<String>) Files.readAllLines(Paths.get("utils\\form.txt"));
+            System.out.println(content.remove(numberQ - 1));
             System.out.println(content);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        app();
     }
 
         public void showForm() {
-            Path fileForm = Path.of("utils\\form.txt");
+        int i = 0;
+
         try {
-            String content = Files.readString(fileForm);
-            System.out.println(content);
+            List<String> content = Files.readAllLines(Paths.get("utils\\form.txt"));
+            System.out.println("==================================================\n" +
+                    "                 FORMULARY\n" +
+                    "        Please answer the questions\n" +
+                    "==================================================");
+            for(String contents : content) {
+                i++;
+                System.out.println("[" + i + "] ➤ " + contents);
+            }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        addPerson();
     }
 
     public void createQuestion() {
@@ -76,10 +95,8 @@ public class Menu {
             throw new RuntimeException(e.getMessage());
         }
 
-        System.out.print("[" + numberQuestion + "]" + " ➤ ");
         String question = myObj.nextLine();
         while (question.length() < 10 || question.length() > 100) {
-            System.out.print("[" + numberQuestion + "]" + " ➤ ");
             question = myObj.nextLine();
         }
 
@@ -90,7 +107,8 @@ public class Menu {
         try {
             FileWriter myFile = new FileWriter("utils\\form.txt");
             myFile.write(content);
-            myFile.write("[" + numberQuestion + "]" + " ➤ " + question);
+            myFile.write(question);
+            myFile.write("\n");
             myFile.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
@@ -99,6 +117,16 @@ public class Menu {
 
         app();
 
+    }
+
+    public void showMenu() {
+        Path fileMenu = Path.of("utils\\menu.txt");
+        try {
+            String content = Files.readString(fileMenu);
+            System.out.println(content);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void addPerson() {
