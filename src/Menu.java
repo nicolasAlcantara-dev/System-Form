@@ -56,7 +56,7 @@ public class Menu {
         try {
             ArrayList<String> content = (ArrayList<String>) Files.readAllLines(Paths.get("utils\\form.txt"));
             System.out.println(content.remove(numberQ - 1));
-            System.out.println(content);
+            Files.write(Paths.get("utils\\form.txt"), content);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -90,7 +90,7 @@ public class Menu {
 
         try {
             content = Files.readString(fileForm);
-            System.out.println(content);
+            showForm();
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage());
         }
